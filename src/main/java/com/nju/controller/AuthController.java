@@ -16,16 +16,21 @@ import java.util.Map;
 @Controller
 public class AuthController {
 
-    @RequestMapping(value = "/login" , method = RequestMethod.POST)
+    @RequestMapping(value = "/login" , method = RequestMethod.GET)
     public String login(){
         return "/login";
     }
 
-    @RequestMapping(value = "/login" , method = RequestMethod.POST)
+    @RequestMapping(value = "/test" , method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> postlogin(String username, String password, HttpSession session){
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("test","test");
         return map;
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(){
+        return "/index";
     }
 }
