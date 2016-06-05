@@ -1,5 +1,7 @@
 package com.nju.controller;
 
+import com.nju.service.CourseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,8 +18,12 @@ import java.util.Map;
 @Controller
 public class AuthController {
 
+    @Autowired
+    private CourseService courseService;
+
     @RequestMapping(value = "/login" , method = RequestMethod.GET)
     public String login(){
+        courseService.getCourses();
         return "/login";
     }
 
@@ -26,6 +32,7 @@ public class AuthController {
     public Map<String, Object> postlogin(String username, String password, HttpSession session){
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("test","test");
+
         return map;
     }
 
