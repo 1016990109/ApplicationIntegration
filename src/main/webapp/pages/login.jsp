@@ -9,12 +9,24 @@
 <html>
 <head>
     <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 </head>
 <body>
-    <form action="/login">
-        <label for="">username</label><input type="text">
-        <label for="">password</label><input type="password">
-        test
-    </form>
+<div class="container">
+    <section id="content">
+        <form action="/login" method="post">
+            <h1>学生登录</h1>
+            <div>
+                <input type="text" placeholder="Username" required="required" id="username" />
+            </div>
+            <div>
+                <input type="password" placeholder="Password" required="required" id="password" />
+            </div>
+            <div class="login">
+                <input type="submit" value="登录" />
+            </div>
+        </form><!-- form -->
+    </section><!-- content -->
+</div><!-- container -->
 </body>
 </html>

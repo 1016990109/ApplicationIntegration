@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,17 +28,34 @@ public class AuthController {
         return "/login";
     }
 
-    @RequestMapping(value = "/test" , method = RequestMethod.POST)
-    @ResponseBody
-    public Map<String, Object> postlogin(String username, String password, HttpSession session){
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("test","test");
+    @RequestMapping(value = "/login" , method = RequestMethod.POST)
+    public String postlogin(String username, String password, HttpSession session){
+        System.out.println(username);
+        System.out.println(password);
+        return "redirect:/index";
+    }
 
-        return map;
+    @RequestMapping(value = "/logout" , method = RequestMethod.GET)
+    public String logout(HttpSession session){
+        Enumeration<String> em = session.getAttributeNames();
+        while (em.hasMoreElements()) {
+            session.removeAttribute(em.nextElement().toString());
+        }
+        return "/login";
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
         return "/index";
+    }
+
+    @RequestMapping(value = "/course", method = RequestMethod.GET)
+    public String course(){
+        return "/course";
+    }
+
+    @RequestMapping(value = "/students", method = RequestMethod.GET)
+    public String students(){
+        return "/students";
     }
 }
