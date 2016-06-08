@@ -7,9 +7,13 @@ import java.util.Map;
  * Created by 传旺 on 2016/6/5.
  */
 public interface CourseService {
-    List<Object> getCourses();
+    List<Object> getCourses(int studentId);
 
-    Map<String, Object> getOtherCourses();
+    Map<String, Object> getOtherCourses(int studentId);
 
-    List<Object> getMyCourses();
+    List<Object> getMyCourses(int studentId);
+
+    boolean chooseCourse(int studentId, int courseId, String department);
+
+    boolean dropCourse(int studentId, int courseId, String department);
 }

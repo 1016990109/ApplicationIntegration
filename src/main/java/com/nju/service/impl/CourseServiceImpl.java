@@ -17,20 +17,22 @@ public class CourseServiceImpl implements CourseService {
     private TestDao testDao;
 
     /**
-     * 获得本院系A的课程
+     * 获得本院系A的课程，包含学生是否选择某门课程的信息
+     * @param studentId 学生id
      * @return 返回一个课程列表List、ArrayList
      */
     @Override
-    public List<Object> getCourses() {
+    public List<Object> getCourses(int studentId) {
         return testDao.test();
     }
 
     /**
-     * 获得其他院系的课程
+     * 获得其他院系的课程，包含学生是否选择某门课程的信息
+     * @param studentId 学生id
      * @return 返回map，String：院系名称，Object：课程列表
      */
     @Override
-    public Map<String, Object> getOtherCourses() {
+    public Map<String, Object> getOtherCourses(int studentId) {
         return null;
     }
 
@@ -39,7 +41,31 @@ public class CourseServiceImpl implements CourseService {
      * @return 返回选课的列表List、ArrayList
      */
     @Override
-    public List<Object> getMyCourses() {
+    public List<Object> getMyCourses(int studentId) {
         return null;
+    }
+
+    /**
+     * 选课
+     * @param studentId 学生id
+     * @param courseId 课程id
+     * @param department 院系：A、B、C
+     * @return
+     */
+    @Override
+    public boolean chooseCourse(int studentId, int courseId, String department) {
+        return false;
+    }
+
+    /**
+     * 退课
+     * @param studentId 学生id
+     * @param courseId 课程id
+     * @param department 院系：A、B、C
+     * @return
+     */
+    @Override
+    public boolean dropCourse(int studentId, int courseId, String department) {
+        return false;
     }
 }

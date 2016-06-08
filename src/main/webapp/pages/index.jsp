@@ -76,7 +76,7 @@
                         <th>授课地点</th>
                         <th>学分</th>
                         <th>选课人数</th>
-                        <th>选课/退课</th>
+                        <th>选课</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -96,7 +96,7 @@
                         <td>教201</td>
                         <td>3</td>
                         <td>212</td>
-                        <td><a href="#">选课</a>/<a href="#">退课</a></td>
+                        <td><a href="#">选课</a></td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
@@ -105,7 +105,7 @@
                         <td>教103</td>
                         <td>2</td>
                         <td>212</td>
-                        <td><a href="#">选课</a>/<a href="#">退课</a></td>
+                        <td><a href="#">选课</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -129,7 +129,7 @@
                         <th>授课地点</th>
                         <th>学分</th>
                         <th>选课人数</th>
-                        <th>选课/退课</th>
+                        <th>选课</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -140,7 +140,7 @@
                         <td>教103</td>
                         <td>2</td>
                         <td>212</td>
-                        <td><a href="#">选课</a>/<a href="#">退课</a></td>
+                        <td>已选</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
@@ -149,7 +149,7 @@
                         <td>教203</td>
                         <td>2</td>
                         <td>212</td>
-                        <td><a href="#">选课</a>/<a href="#">退课</a></td>
+                        <td><a href="#">选课</a></td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
@@ -158,7 +158,7 @@
                         <td>教103</td>
                         <td>2</td>
                         <td>212</td>
-                        <td><a href="#">选课</a>/<a href="#">退课</a></td>
+                        <td><a href="#">选课</a></td>
                     </tr>
                     </tbody>
                 </table>
