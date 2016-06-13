@@ -1,10 +1,16 @@
 package com.nju.service.impl;
 
+import com.nju.dao.CourseDao;
 import com.nju.dao.TestDao;
+import com.nju.data.DataService;
+import com.nju.data.DepartADataImpl;
+import com.nju.model.Course;
 import com.nju.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.rmi.RemoteException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +21,8 @@ import java.util.Map;
 public class CourseServiceImpl implements CourseService {
     @Autowired
     private TestDao testDao;
+    @Autowired
+    private CourseDao courseDao;
 
     /**
      * 获得本院系A的课程，包含学生是否选择某门课程的信息
@@ -22,8 +30,8 @@ public class CourseServiceImpl implements CourseService {
      * @return 返回一个课程列表List、ArrayList
      */
     @Override
-    public List<Object> getCourses(int studentId) {
-        return testDao.test();
+    public List<Course> getCourses(int studentId) {
+        return courseDao.getCourse(studentId);
     }
 
     /**
@@ -32,8 +40,15 @@ public class CourseServiceImpl implements CourseService {
      * @return 返回map，String：院系名称，Object：课程列表
      */
     @Override
-    public Map<String, Object> getOtherCourses(int studentId) {
-        return null;
+    public Map<String, List<Course>> getOtherCourses(int studentId) {
+        DataService service = new DepartADataImpl();
+        HashMap<String, List<Course>> result = null;
+        try {
+             result = (HashMap<String, List<Course>>) service.getOtherCourses(studentId);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     /**

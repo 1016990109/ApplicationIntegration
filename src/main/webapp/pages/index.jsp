@@ -75,38 +75,11 @@
                         <th>授课老师</th>
                         <th>授课地点</th>
                         <th>学分</th>
-                        <th>选课人数</th>
                         <th>选课</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>软件测试</td>
-                        <td>陈振宇</td>
-                        <td>教202</td>
-                        <td>2</td>
-                        <td>212</td>
-                        <td><a href="#" data-toggle="modal" data-target="#chooseCourseModal" data-course-id="1" data-course-name="软件测试" data-course-place="教202" data-course-teacher="陈振宇" data-course-credits="2">选课</a>/<a href="#">退课</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>人机交互</td>
-                        <td>冯桂焕</td>
-                        <td>教201</td>
-                        <td>3</td>
-                        <td>212</td>
-                        <td><a href="#">选课</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>应用集成管理</td>
-                        <td>刘峰</td>
-                        <td>教103</td>
-                        <td>2</td>
-                        <td>212</td>
-                        <td><a href="#">选课</a></td>
-                    </tr>
+                    <tbody id="course-list">
+
                     </tbody>
                 </table>
             </div>
@@ -128,38 +101,35 @@
                         <th>授课老师</th>
                         <th>授课地点</th>
                         <th>学分</th>
-                        <th>选课人数</th>
                         <th>选课</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="course-listB">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">学院C课程</div>
+
+                <!-- Table -->
+                <table class="table table-striped">
+                    <thead>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>管理信息系统</td>
-                        <td>王浩然</td>
-                        <td>教103</td>
-                        <td>2</td>
-                        <td>212</td>
-                        <td>已选</td>
+                        <th>课程编号</th>
+                        <th>课程名称</th>
+                        <th>授课老师</th>
+                        <th>授课地点</th>
+                        <th>学分</th>
+                        <th>选课</th>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>数据库开发</td>
-                        <td>刘嘉</td>
-                        <td>教203</td>
-                        <td>2</td>
-                        <td>212</td>
-                        <td><a href="#">选课</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>SOA</td>
-                        <td>汤恩义</td>
-                        <td>教103</td>
-                        <td>2</td>
-                        <td>212</td>
-                        <td><a href="#">选课</a></td>
-                    </tr>
+                    </thead>
+                    <tbody id="course-listB">
                     </tbody>
                 </table>
             </div>
@@ -201,5 +171,9 @@
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/js/course.js"></script>
+<script>
+    loadChooseModal();
+    loadCourses();
+</script>
 </body>
 </html>

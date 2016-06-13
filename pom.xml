@@ -11,7 +11,9 @@
   <properties>
     <spring.version>4.2.2.RELEASE</spring.version>
     <spring-data.version>1.2.0.RELEASE</spring-data.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
 
   <dependencies>
 
@@ -143,8 +145,24 @@
       <version>4.12</version>
     </dependency>
 
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>ApplicationIntegration</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

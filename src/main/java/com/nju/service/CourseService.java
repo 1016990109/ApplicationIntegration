@@ -1,5 +1,7 @@
 package com.nju.service;
 
+import com.nju.model.Course;
+
 import java.util.List;
 import java.util.Map;
 
@@ -7,9 +9,9 @@ import java.util.Map;
  * Created by 传旺 on 2016/6/5.
  */
 public interface CourseService {
-    List<Object> getCourses(int studentId);
+    List<Course> getCourses(int studentId);
 
-    Map<String, Object> getOtherCourses(int studentId);
+    Map<String, List<Course>> getOtherCourses(int studentId);
 
     List<Object> getMyCourses(int studentId);
 

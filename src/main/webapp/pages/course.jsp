@@ -86,7 +86,7 @@
                     <td>教103</td>
                     <td>2</td>
                     <td>212</td>
-                    <td><a href="#">退课</a></td>
+                    <td><a href="#" data-toggle="modal" data-target="#dropCourseModal" data-course-id="1" data-course-name="管理信息系统" data-course-place="教103" data-course-teacher="王浩然" data-course-credits="2">退课</a></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -112,7 +112,42 @@
     </div>
 </div>
 
+<%--退课模态框--%>
+<div class="modal fade" id="dropCourseModal" tabindex="-1" role="dialog" aria-labelledby="dropCourseModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="dropCourseModalLabel">确定退选</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="course-teacher" class="control-label">授课教师:</label>
+                        <input type="text" class="form-control" readonly="readonly" id="course-teacher">
+                    </div>
+                    <div class="form-group">
+                        <label for="course-place" class="control-label">授课地点:</label>
+                        <input class="form-control" readonly="readonly" id="course-place">
+                    </div>
+                    <div class="form-group">
+                        <label for="course-credits" class="control-label">学分:</label>
+                        <input class="form-control" readonly="readonly" id="course-credits">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/course.js"></script>
+<script>
+    loadDropModal();
+</script>
 </body>
 </html>
